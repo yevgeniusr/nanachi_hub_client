@@ -7,7 +7,7 @@
   import Chat from "./routes/Chat.svelte";
   import Casino from "./routes/Casino.svelte";
   import Hwtp from "./routes/Hwtp.svelte";
-  import "./public/particles.js";
+  import "./services/particles.js";
 
   export let url = "";
 

@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: center;
 
-    font-size: 3em;
+    font-size: 2em;
     cursor: pointer;
   }
 
@@ -46,7 +46,7 @@
   .title {
     justify-self: center;
     align-self: center;
-    font-size: 10em;
+    font-size: 6em;
     color: var(--second-color);
   }
 </style>

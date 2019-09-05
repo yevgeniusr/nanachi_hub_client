@@ -1,10 +1,27 @@
 <script>
   import NavLink from "../components/NavLink.svelte";
   import { navigateTo } from "../services/navigate.js";
+
+  let background;
+  let x_size = 20;
+  let y_size = 20;
+  let grid_size = [...Array(x_size * y_size).keys()];
+
+  function grid_clicked(e) {
+    console.log(e);
+    e.originalTarget.classList.remove('grid_point');
+    e.originalTarget.classList.add('grid_clicked');
+  }
+
+  function dive_diper(e) {
+    console.log(e)
+    background.dispatchEvent(e);
+  }
 </script>
 
 <style type="text/scss">
   .hall {
+    z-index: -2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
@@ -49,9 +66,39 @@
     font-size: 6em;
     color: var(--second-color);
   }
+
+  .background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--second-color);
+
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    grid-gap: 1px;
+  }
+
+  .grid_point {
+    background-color: var(--base-color); 
+    &:hover {
+      transition: 0.5s;
+      background-color: var(--second-color); 
+    }
+  }
+
+  .grid_point .grid_clicked {
+  }
+
+  .grid_clicked {
+
+  }
 </style>
 
-<section class="hall">
+<section on:click={dive_diper} class="hall">
   <img id="nanachi" src="img/nanachi_hub.png" alt="nanachi" />
   <h1 class="title">Nanachi Hub</h1>
   <nav>
@@ -64,4 +111,9 @@
       Casino
     </span>
   </nav>
+  <div bind:this={background} class="background">
+    {#each grid_size as x}
+      <div on:click={grid_clicked} class="grid_point"></div>
+    {/each}
+  </div>
 </section>

@@ -4,8 +4,8 @@
   import { onMount } from 'svelte';
 
   let background;
-  let x_size = 20;
-  let y_size = 20;
+  let x_size = 50;
+  let y_size = 50;
   let grid_size = [...Array(x_size * y_size).keys()];
 
   onMount(async () => {

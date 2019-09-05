@@ -4,14 +4,13 @@
   import { onMount } from 'svelte';
 
   let background;
-  let x_size = 50;
-  let y_size = 50;
+  let x_size = 20;
+  let y_size = 20;
   let grid_size = [...Array(x_size * y_size).keys()];
 
   onMount(async () => {
-		background.style.setProperty('--x-size', x_size);
-    background.style.setProperty('--y-size', y_size);
-	});
+	setGridSize(x_size, y_size);
+  });
   
   function grid_clicked(e) {
     console.log(e);
@@ -22,6 +21,11 @@
   function dive_diper(e) {
     console.log(e)
     background.dispatchEvent(e);
+  }
+	
+  function setGridSize(x, y) {
+  	background.style.setProperty('--x-size', x);
+    background.style.setProperty('--y-size', y);
   }
 </script>
 

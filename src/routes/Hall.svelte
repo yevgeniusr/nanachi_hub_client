@@ -5,6 +5,8 @@
   let background;
   let x_size = 20;
   let y_size = 20;
+  background.style.setProperty('--x-size', x_size);
+  background.style.setProperty('--y-size', y_size);
   let grid_size = [...Array(x_size * y_size).keys()];
 
   function grid_clicked(e) {
@@ -77,8 +79,8 @@
     background-color: var(--second-color);
 
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(var(--y-size), 1fr);
+    grid-template-rows: repeat(var(--x-size), 1fr);
     grid-gap: 1px;
   }
 

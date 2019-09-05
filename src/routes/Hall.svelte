@@ -1,4 +1,4 @@
-<script>
+<script defer>
   import NavLink from "../components/NavLink.svelte";
   import { navigateTo } from "../services/navigate.js";
 

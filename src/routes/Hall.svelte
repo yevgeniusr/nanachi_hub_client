@@ -1,14 +1,18 @@
-<script defer>
+<script>
   import NavLink from "../components/NavLink.svelte";
   import { navigateTo } from "../services/navigate.js";
+  import { onMount } from 'svelte';
 
   let background;
   let x_size = 20;
   let y_size = 20;
-  background.style.setProperty('--x-size', x_size);
-  background.style.setProperty('--y-size', y_size);
   let grid_size = [...Array(x_size * y_size).keys()];
 
+  onMount(async () => {
+		background.style.setProperty('--x-size', x_size);
+    background.style.setProperty('--y-size', y_size);
+	});
+  
   function grid_clicked(e) {
     console.log(e);
     e.originalTarget.classList.remove('grid_point');

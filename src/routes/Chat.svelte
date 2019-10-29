@@ -4,4 +4,4 @@
 
 
 <span class="link chat__link" on:click={navigateTo()}>Hall</span>
-<h1>Chat</h1>
+<h1>Юга</h1>

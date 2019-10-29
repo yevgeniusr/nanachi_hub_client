@@ -100,15 +100,15 @@
 
 <section on:click={dive_diper} class="hall">
   <img id="nanachi" src="img/nanachi_hub.png" alt="nanachi" />
-  <h1 class="title">Nanachi Hub</h1>
+  <h1 class="title">Nanachi mówi wszystkiego najlepszego</h1>
   <nav>
-    <span class="link chat__link" on:click={navigateTo('chat')}>Chat</span>
+    <span class="link chat__link" on:click={navigateTo('chat')}>На юга</span>
     <span class="link clicker__link" on:click={navigateTo('clicker')}>
-      Clicker
+      В шарагу
     </span>
-    <span class="link hwtp__link" on:click={navigateTo('hwtp')}>HWTP</span>
+    <span class="link hwtp__link" on:click={navigateTo('hwtp')}>Зателефонувати Лушнику</span>
     <span class="link casino__link" on:click={navigateTo('casino')}>
-      Casino
+      В доту
     </span>
   </nav>
   <div bind:this={background} class="background">
